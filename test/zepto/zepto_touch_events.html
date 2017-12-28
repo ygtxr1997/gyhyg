@@ -2,29 +2,33 @@
 <html>
     <head>
         <title>Zepto Test Touch</title>
-        <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scal = 1">
-        
+        <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scale = 1">
+        <style>
+            div{
+                width: 200px;
+                height: 200px;
+                background-color: aquamarine;
+            }
+        </style>
     </head>
     <body>
 
+        <button id="btn">Click to be longer</button>
+        <div class="box"></div>
+
         <script src="../../frame/zepto/zepto.min.js"></script>
 
-        <style>.delete { display: none; }</style>
-        <ul id=items>
-            <li>List item 1 <span class=delete>DELETE</span></li>
-            <li>List item 2 <span class=delete>DELETE</span></li>
-        </ul>
-
         <script>
-            // show delete buttons on swipe
-            $('#items li').swipe(function(){
-                $('.delete').hide()
-                $('.delete', this).show()
+            nWidth = 210;
+            $(function () {
+                $('#btn').on('click', function(){
+                    $('.box').css({
+                        width: nWidth,
+                    });
+                    nWidth += 10;
+                });
             })
-            // delete row on tapping delete button
-            $('.delete').tap(function(){
-                $(this).parent('li').remove()
-            })
+          
         </script>
     </body>
 </html>
