@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "../frame/react/react.js"></script> 
+        <script src = "../frame/react/react-dom.js"></script> 
+        <script src = "../frame/react/browser.min.js"></script> 
+    </head>
+    <body>
+        <div id = "example"></div>
+        <script type = "text/babel"> 
+            var MyComponent = React.createClass({
+                handleClick : function() {
+                    // this.refs.[refName]会返回真实的DOM节点
+                    this.refs.myTextInput.focus();
+                },
+                render: function() {
+                    return (
+                        <div>
+                            <input type = "text" ref = "myTextInput" />
+                            <input type = "button" value = "Focus the text input" onClick = {this.handleClick} /> 
+                            {/*除此之外，还有很多其他事件*/}
+                        </div>    
+                    );
+                }
+            });
+
+            ReactDOM.render(
+                <MyComponent />,
+                document.getElementById('example')
+            );
+        </script>
+    </body>
+</html>

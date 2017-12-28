@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "../frame/react/react.js"></script> 
+        <script src = "../frame/react/react-dom.js"></script> 
+        <script src = "../frame/react/browser.min.js"></script> 
+    </head>
+    <body>
+        <div id = "example"></div>
+        <script type = "text/babel"> 
+            // this.props 是固有属性； this.state是会随互动发生变化的属性
+            var LikeButton = React.createClass({
+                getInitialState: function() {
+                    return {liked: false};
+                },
+                handleClick: function(event) {
+                    this.setState({liked: !this.state.liked});
+                },
+                render : function() {
+                    var text = this.state.liked ? 'like' : 'dislike';
+                    return (
+                        <p onClick = {this.handleClick}>
+                            You {text} this. Click to toggle.
+                        </p>
+                    );
+                }
+            });
+
+            ReactDOM.render(
+                <LikeButton/>,
+                document.getElementById('example')
+            );
+        </script>
+    </body>
+</html>

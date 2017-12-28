@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src = "../frame/react/react.js"></script> 
+        <script src = "../frame/react/react-dom.js"></script> 
+        <script src = "../frame/react/browser.min.js"></script> 
+    </head>
+    <body>
+        <div id = "example"></div>
+        <script type = "text/babel"> 
+            // 把代码封装成组件
+            var HelloMessage = React.createClass({
+                render: function() {
+                    return <h1>Hello {this.props.name}</h1>;
+                }
+            });
+
+            ReactDOM.render(
+                <HelloMessage name = "John"/>,
+                document.getElementById('example')
+            );
+        </script>
+    </body>
+</html>
