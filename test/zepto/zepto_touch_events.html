@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Zepto Test Touch</title>
+        <meta name = "viewport" content = "width=device-width, initial-scale=1, maximum-scal = 1">
+        
+        <script src="../../frame/zepto/zepto.min.js"></script>
+    </head>
+    <body>
+        <h1>Click and Tap</h1>
+
+        <button class="clicke">Click</button>
+        <button class="tap">Tap</button>
+
+        <script>
+            var clicks = 0;
+            var taps = 0;
+
+            $('.clicke').click(function(){
+                $(this).text('Clicke' + (++clicks));
+            });
+
+            $('.tap').tap(function(){
+                $(this).text('Tap ' + (++taps));
+            });
+        </script>
+    </body>
+</html>
